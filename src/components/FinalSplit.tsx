@@ -39,7 +39,7 @@ export function FinalSplit() {
           window.scrollTo({ top: y, behavior: 'smooth' });
         }
       }, 100);
-      
+
       // Track the decision
       trackEvent("DECISION_MADE", {
         decision: selected,
@@ -83,7 +83,7 @@ export function FinalSplit() {
     if (!audioRef.current) return;
     const time = audioRef.current.currentTime;
     setCurrentTime(time);
-    
+
     // Find the current lyric index
     if (selected) {
       const lyrics = lyricsData[selected];
@@ -229,14 +229,14 @@ export function FinalSplit() {
             </motion.button>
 
             {selected === 'left' && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="w-full text-left"
               >
                 <p className="text-base md:text-lg font-light leading-relaxed text-white/80 italic border-l-2 border-white/20 pl-4 py-1">
-                  Aquí irá el texto extra que mencionaste, para darle contexto a esta decisión antes de la canción.
+                  Ya sabes donde puedes escribirme.
                 </p>
               </motion.div>
             )}
@@ -270,7 +270,7 @@ export function FinalSplit() {
                 </div>
 
                 <div className="flex items-center gap-2 mt-1">
-                  <button 
+                  <button
                     onClick={togglePlayPause}
                     className="w-8 h-8 rounded-full flex items-center justify-center bg-[#1DB954] hover:bg-[#1ed760] hover:scale-105 transition-all shadow-lg"
                   >
@@ -282,8 +282,8 @@ export function FinalSplit() {
                   </button>
                   <div className="flex-grow flex flex-col gap-0.5">
                     <div className="w-full h-1 bg-white/20 rounded-full overflow-hidden relative cursor-pointer group">
-                      <div 
-                        className="absolute top-0 left-0 h-full bg-white group-hover:bg-[#1DB954] rounded-full transition-all duration-100 ease-linear" 
+                      <div
+                        className="absolute top-0 left-0 h-full bg-white group-hover:bg-[#1DB954] rounded-full transition-all duration-100 ease-linear"
                         style={{ width: duration ? `${(currentTime / duration) * 100}%` : '0%' }}
                       />
                     </div>
@@ -323,11 +323,10 @@ export function FinalSplit() {
                         }}
                         exit={{ opacity: 0, y: -50, scale: 0.9 }}
                         transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                        className={`absolute text-center w-full max-w-2xl px-4 ${
-                          isCurrent 
-                            ? "text-2xl md:text-3xl font-bold text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" 
+                        className={`absolute text-center w-full max-w-2xl px-4 ${isCurrent
+                            ? "text-2xl md:text-3xl font-bold text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
                             : "text-lg md:text-xl font-light text-white/70"
-                        }`}
+                          }`}
                       >
                         {lyric.text}
                       </motion.p>
