@@ -1,0 +1,1 @@
+Este directorio está destinado para tus imágenes y otros archivos estáticos. Puedes guardar tus imágenes aquí (por ejemplo, `public/images/mi-imagen.jpg`) y referenciarlas en la base de datos como `/images/mi-imagen.jpg`.
